@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Recommendation History - PocketSmart AI</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f8f8f6;
+    color: #222;
+}
+
+nav {
+    height: 75px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #8b5cf6;
+}
+
+.back {
+    text-decoration: none;
+    color: #666;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.header {
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #777;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.history-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.05);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    background: #eee9ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    flex-shrink: 0;
+}
+
+.info h2 {
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+.info p {
+    color: #777;
+    font-size: 14px;
+}
+
+.view {
+    text-decoration: none;
+    background: #8b5cf6;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.empty {
+    background: white;
+    border-radius: 18px;
+    padding: 60px 20px;
+    text-align: center;
+    color: #777;
+}
+
+.empty-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.empty h2 {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+@media(max-width: 650px) {
+
+    .history-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .view {
+        width: 100%;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        Pocket<span>Smart</span> AI
+    </div>
+
+    <a class="back" href="dashboard.html">
+        ← Dashboard
+    </a>
+
+</nav>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>Recommendation History 📋</h1>
+
+        <p>
+            View your previous PocketSmart AI planning sessions.
+        </p>
+
+    </div>
+
+    <div class="history-list">
+
+        <div class="history-card">
+
+            <div class="left">
+
+                <div class="icon">🏠</div>
+
+                <div class="info">
+
+                    <h2>Home Interior Plan</h2>
+
+                    <p>
+                        Budget: ₹50,000 &nbsp; • &nbsp;
+                        Living Room
+                    </p>
+
+                </div>
+
+            </div>
+
+            <a href="home-recommendations.html" class="view">
+                View
+            </a>
+
+        </div>
+
+        <div class="history-card">
+
+            <div class="left">
+
+                <div class="icon">🎉</div>
+
+                <div class="info">
+
+                    <h2>Birthday Party Plan</h2>
+
+                    <p>
+                        Budget: ₹50,000 &nbsp; • &nbsp;
+                        50 Guests
+                    </p>
+
+                </div>
+
+            </div>
+
+            <a href="party-recommendations.html" class="view">
+                View
+            </a>
+
+        </div>
+
+        <div class="history-card">
+
+            <div class="left">
+
+                <div class="icon">💎</div>
+
+                <div class="info">
+
+                    <h2>Jewelry Plan</h2>
+
+                    <p>
+                        Budget: ₹50,000 &nbsp; • &nbsp;
+                        Wedding
+                    </p>
+
+                </div>
+
+            </div>
+
+            <a href="jewelry-recommendations.html" class="view">
+                View
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

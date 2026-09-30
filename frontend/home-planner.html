@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Interior Planner - PocketSmart AI</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f8f8f6;
+    color: #222;
+}
+
+nav {
+    height: 75px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #8b5cf6;
+}
+
+.back {
+    text-decoration: none;
+    color: #666;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: 50px auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.header p {
+    color: #777;
+    font-size: 17px;
+}
+
+.form-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.field {
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+    background: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #8b5cf6;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 9px;
+    background: #8b5cf6;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #7546e8;
+}
+
+@media(max-width: 650px) {
+    .row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-box {
+        padding: 25px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        Pocket<span>Smart</span> AI
+    </div>
+
+    <a class="back" href="dashboard.html">
+        ← Dashboard
+    </a>
+</nav>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Home Interior Planner 🏠</h1>
+        <p>Tell us what you need and we'll create a smart plan for your budget.</p>
+    </div>
+
+    <div class="form-box">
+
+        <div class="row">
+
+            <div class="field">
+                <label>Budget (₹)</label>
+                <input
+                    type="number"
+                    placeholder="Example: 50000"
+                >
+            </div>
+
+            <div class="field">
+                <label>Room Type</label>
+
+                <select>
+                    <option>Select room</option>
+                    <option>Living Room</option>
+                    <option>Bedroom</option>
+                    <option>Dining Room</option>
+                    <option>Kitchen</option>
+                    <option>Full Home</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="field">
+                <label>Number of Lights</label>
+                <input
+                    type="number"
+                    placeholder="Example: 6"
+                >
+            </div>
+
+            <div class="field">
+                <label>Number of Fans</label>
+                <input
+                    type="number"
+                    placeholder="Example: 3"
+                >
+            </div>
+
+        </div>
+
+        <div class="field">
+            <label>Dining Table Quantity</label>
+
+            <input
+                type="number"
+                placeholder="Example: 1"
+            >
+        </div>
+
+        <div class="field">
+            <label>Additional Requirements</label>
+
+            <textarea
+                placeholder="Tell us about your preferred style, colors, furniture, etc."
+            ></textarea>
+        </div>
+
+        <button onclick="generatePlan()">
+            Generate My Plan ✨
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+async function generatePlan() {
+
+    const budget = document.querySelector('input[type="number"]').value;
+
+    const room = document.querySelector('select').value;
+
+    const numbers = document.querySelectorAll('input[type="number"]');
+
+    const lights = numbers[1].value;
+    const fans = numbers[2].value;
+    const dining = numbers[3].value;
+
+    const textarea = document.querySelector('textarea').value;
+
+    const details = `
+Room: ${room}
+Number of lights: ${lights}
+Number of fans: ${fans}
+Dining table quantity: ${dining}
+Additional requirements: ${textarea}
+`;
+
+    if (!budget || room === "Select room") {
+        alert("Please enter your budget and select a room.");
+        return;
+    }
+
+    try {
+
+        const response = await fetch("http://127.0.0.1:8000/generate-home", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                details: details,
+                budget: Number(budget)
+            })
+
+        });
+
+        const data = await response.json();
+
+        localStorage.setItem(
+            "homeRecommendation",
+            data.recommendation
+        );
+
+        localStorage.setItem(
+            "homeBudget",
+            budget
+        );
+
+        window.location.href = "home-recommendations.html";
+
+    } catch (error) {
+
+        alert(
+            "Could not connect to PocketSmart AI. Make sure the FastAPI server is running."
+        );
+
+        console.error(error);
+    }
+}
+</script>
+
+</body>
+</html>

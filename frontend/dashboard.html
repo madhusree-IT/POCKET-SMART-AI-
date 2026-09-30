@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - PocketSmart AI</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f8f8f6;
+    color: #222;
+}
+
+nav {
+    height: 75px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #8b5cf6;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.history {
+    text-decoration: none;
+    color: #444;
+}
+
+.logout {
+    border: 1px solid #8b5cf6;
+    color: #8b5cf6;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.container {
+    width: 86%;
+    max-width: 1150px;
+    margin: 55px auto;
+}
+
+.welcome {
+    margin-bottom: 40px;
+}
+
+.welcome h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #777;
+    font-size: 17px;
+}
+
+.planners {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 35px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 16px;
+    background: #f0eaff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.card h2 {
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.card a {
+    display: inline-block;
+    background: #8b5cf6;
+    color: white;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+@media(max-width: 850px) {
+    .planners {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        Pocket<span>Smart</span> AI
+    </div>
+
+    <div class="nav-right">
+        <a class="history" href="history.html">History</a>
+        <a class="logout" href="index.html">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="welcome">
+        <h1>Welcome to PocketSmart AI 👋</h1>
+        <p>Choose a planner and let AI help you plan within your budget.</p>
+    </div>
+
+    <div class="planners">
+
+        <div class="card">
+            <div class="icon">🏠</div>
+
+            <h2>Home Planner</h2>
+
+            <p>
+                Plan your home interior and find smart
+                recommendations according to your budget.
+            </p>
+
+            <a href="home-planner.html">
+                Start Planning →
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎉</div>
+
+            <h2>Party Planner</h2>
+
+            <p>
+                Organize your party with smart budget
+                allocation for food, decoration and more.
+            </p>
+
+            <a href="party-planner.html">
+                Start Planning →
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">💎</div>
+
+            <h2>Jewelry Planner</h2>
+
+            <p>
+                Find jewelry recommendations based on
+                your occasion, style and budget.
+            </p>
+
+            <a href="jewelry-planner.html">
+                Start Planning →
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

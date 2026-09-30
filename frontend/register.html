@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account - PocketSmart AI</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f8f8f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 430px;
+            background: white;
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 27px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .logo span {
+            color: #8b5cf6;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 9px;
+            margin-bottom: 18px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #8b5cf6;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 9px;
+            background: #8b5cf6;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #7546e8;
+        }
+
+        .login {
+            text-align: center;
+            margin-top: 22px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .login a {
+            color: #8b5cf6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">
+        Pocket<span>Smart</span> AI
+    </div>
+
+    <p class="subtitle">
+        Your smart planning assistant
+    </p>
+
+    <h2>Create your account</h2>
+
+    <form>
+
+        <label>Full Name</label>
+        <input
+            type="text"
+            placeholder="Enter your name"
+            required
+        >
+
+        <label>Email Address</label>
+        <input
+            type="email"
+            placeholder="Enter your email"
+            required
+        >
+
+        <label>Password</label>
+        <input
+            type="password"
+            placeholder="Create a password"
+            required
+        >
+
+        <button type="submit">
+            Create Account
+        </button>
+
+    </form>
+
+    <div class="login">
+        Already have an account?
+        <a href="login.html">Login</a>
+    </div>
+
+</div>
+
+</body>
+</html>

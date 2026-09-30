@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Party Recommendations - PocketSmart AI</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f8f8f6;
+    color: #222;
+}
+
+nav {
+    height: 75px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #8b5cf6;
+}
+
+.back {
+    text-decoration: none;
+    color: #666;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 45px auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.header p {
+    color: #777;
+}
+
+.budget {
+    background: #eee9ff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.budget strong {
+    color: #8b5cf6;
+    font-size: 22px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.icon {
+    height: 150px;
+    border-radius: 12px;
+    background: #eee9ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #8b5cf6;
+}
+
+.tip {
+    margin-top: 35px;
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    border-left: 5px solid #8b5cf6;
+}
+
+.tip h2 {
+    margin-bottom: 10px;
+}
+
+.tip p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.actions a {
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 9px;
+}
+
+.primary {
+    background: #8b5cf6;
+    color: white;
+}
+
+.secondary {
+    border: 1px solid #8b5cf6;
+    color: #8b5cf6;
+}
+
+@media(max-width: 800px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        Pocket<span>Smart</span> AI
+    </div>
+
+    <a class="back" href="party-planner.html">
+        ← Edit Plan
+    </a>
+</nav>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Your Party Recommendations 🎉</h1>
+        <p>Here's a smart budget breakdown for your event.</p>
+    </div>
+
+    <div class="budget">
+        Planned Party Budget:
+        <strong>₹50,000</strong>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">🍽️</div>
+            <h2>Food & Catering</h2>
+            <p>
+                Suggested catering allocation based on
+                your guest count and event type.
+            </p>
+            <div class="price">₹20,000</div>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎈</div>
+            <h2>Decoration</h2>
+            <p>
+                Theme decorations, balloons, lighting
+                and table arrangements.
+            </p>
+            <div class="price">₹10,000</div>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎵</div>
+            <h2>Entertainment</h2>
+            <p>
+                Music, activities and entertainment
+                suggestions for your guests.
+            </p>
+            <div class="price">₹8,000</div>
+        </div>
+
+    </div>
+
+    <div class="tip">
+        <h2>💡 PocketSmart AI Saving Tip</h2>
+        <p>
+            Compare catering and decoration packages before
+            booking. Reserve part of your budget for unexpected
+            event expenses.
+        </p>
+    </div>
+
+    <div class="actions">
+        <a href="party-planner.html" class="secondary">
+            ← Plan Again
+        </a>
+
+        <a href="dashboard.html" class="primary">
+            Dashboard
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
